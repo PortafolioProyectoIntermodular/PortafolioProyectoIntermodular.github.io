@@ -1,0 +1,571 @@
+<!DOCTYPE html><html><head>
+      <title>UD4 Evaluación del proyecto intermodular</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css);
+code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+@page a4landscape {
+  size: A4 landscape;
+  margin: 1cm;
+}
+@page a4portrait {
+  size: A4 portrait;
+  margin: 1cm 1cm 2.5cm 1cm;
+}
+.markdown-preview.markdown-preview .landscape {
+  page: a4landscape;
+}
+.markdown-preview.markdown-preview .portrait {
+  page: a4portrait;
+}
+.markdown-preview.markdown-preview .box_bg_lightgray {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgreen {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://balmisdigigs.github.io/digitalizacion.github.io/imagenes/fondos/quote.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .salida_consola {
+  background-color: #000000;
+  color: aquamarine;
+  border: 3px solid slategrey;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px 0 slategrey;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 0.8rem;
+}
+
+      </style>
+      <script type="text/javascript">
+  const configureMermaidIconPacks = () => {
+    window["mermaid"].registerIconPacks([
+      {
+        name: "logos",
+        loader: () =>
+          fetch("https://unpkg.com/@iconify-json/logos@1/icons.json").then(
+            (res) => res.json()
+          ),
+      },
+    ]);
+  };
+
+  if (document.readyState !== 'loading') {
+    configureMermaidIconPacks();
+  } else {
+    document.addEventListener("DOMContentLoaded", () => {
+      configureMermaidIconPacks();
+    });
+  }
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="ud4-evaluación-del-proyecto-intermodular">UD4 Evaluación del proyecto intermodular </h1>
+<p><a href="./u4.pdf">Descargar este documento</a></p>
+<h2 id="índice">Índice </h2>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#introducción" class="md-toc-link">
+            <p>Introducción</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#la-importancia-del-trabajo-en-equipo-ideas-clave-para-el-trabajo-en-equipo-en-fp" class="md-toc-link"><p>La importancia del trabajo en equipo: ideas clave para el trabajo en equipo en FP</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#herramientas-para-el-trabajo-en-equipo-por-niveles-de-fp" class="md-toc-link">
+            <p>Herramientas para el trabajo en equipo por niveles de FP</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#recursos-y-dinámicas-para-el-trabajo-en-equipo" class="md-toc-link"><p>Recursos y dinámicas para el trabajo en equipo</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#contrato-de-equipo-team-charter-20-min" class="md-toc-link">
+            <p>Contrato de equipo (Team Charter) 20 min</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#rueda-de-roles" class="md-toc-link">
+            <p>Rueda de roles</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#stand-up-adaptado-a-fp" class="md-toc-link">
+            <p>Stand-up adaptado a FP</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#retrospectiva-3-2-1" class="md-toc-link">
+            <p>Retrospectiva 3-2-1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#técnica-1-2-4-todos-para-decidir" class="md-toc-link">
+            <p>Técnica “1-2-4-Todos” para decidir</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#protocolo-de-conflicto-en-4-pasos" class="md-toc-link">
+            <p>Protocolo de conflicto en 4 pasos</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#herramientas-de-coordinación-para-el-alumnado" class="md-toc-link">
+            <p>Herramientas de coordinación para el alumnado</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#coordinación-entre-docentes" class="md-toc-link">
+            <p>Coordinación entre docentes</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#plantillas-útiles-y-resolución-de-problemas" class="md-toc-link">
+            <p>Plantillas útiles y resolución de problemas</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#evaluación-formativa-y-sumativa" class="md-toc-link"><p>Evaluación formativa y sumativa</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#evaluación-formativa-y-sumativa-1" class="md-toc-link">
+            <p>Evaluación formativa y sumativa</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#referencias" class="md-toc-link">
+            <p>Referencias</p>
+
+          </a></div>
+</div>
+<div style="page-break-after:always;"></div>
+<h1 id="introducción">Introducción </h1>
+<p>La nueva ley de FP concibe el Proyecto Intermodular no como una tarea individual, sino como un proceso colaborativo del alumnado y del equipo docente. Así lo recoge el Real Decreto 659/2023 en los siguientes artículos:</p>
+<ul>
+<li>Artículo 5: Establece un enfoque interdisciplinar.</li>
+<li>Artículo 96: Señala que el Proyecto Intermodular integra resultados de aprendizaje de varios módulos y se desarrolla mediante metodologías activas que favorecen la colaboración.</li>
+</ul>
+<p>El trabajo en equipo se justifica, además, por su relación directa con la realidad laboral, donde las empresas demandan competencias transversales como la colaboración, la corresponsabilidad y la comunicación eficaz. A ello se suma un sólido sustento teórico, ya que el aprendizaje se construye en interacción social y mejora tanto el rendimiento como las relaciones interpersonales.</p>
+<p>En el ámbito de la evaluación, diferenciaremos entre la vertiente formativa —centrada en el feedback continuo y los puntos de control o checkpoints— y la sumativa, que nos permitirá calificar de forma justa tanto el producto final como el proceso. Finalmente, profundizaremos en la defensa oral como la situación auténtica donde el alumnado debe demostrar su madurez técnica y su capacidad para justificar decisiones profesionales.</p>
+<p><strong>Formativa: checkpoints y feedback continuo</strong></p>
+<p>Le daremos un % sobre la evaluación total a la evaluación formativa, que se organizará en torno a checkpoints o hitos intermedios. En cada checkpoint, el equipo debe entregar evidencias concretas de su progreso, como prototipos, documentación técnica, o resultados de pruebas. Es fundamental que cada checkpoint incluya:</p>
+<ul>
+<li>Fecha planificada</li>
+<li>Evidencia concreta</li>
+<li>Rúbrica conocida desde el inicio del proyecto</li>
+<li>Feedback accionable</li>
+<li>Tiempo suficiente para actuar sobre el feedback antes del siguiente hito.</li>
+</ul>
+<p>Para la <strong>evaluación individual</strong> es necesario exigir evidencias obligatorias, como:<br>
+- <strong>evidencias indiviales por hito</strong>, deben entregar algo propio<br>
+- <strong>microdefensas orales individuales</strong>, donde cada alumno debe defender su contribución al proyecto y justificar sus decisiones técnicas.<br>
+- <strong>cooevaluación periodica entre compañeros/as</strong>, centrada en contribución, comunicación, y fiablilidad. No es para ponerse nota, sino para reflexionar sobre el trabajo en equipo y detectar mejoras.</p>
+<p><strong>Sumativa: calificación justa de producto y proceso.</strong></p>
+<p>Hay que <strong>repartir responsabilidades</strong>, no solo tareas. Debe haber <strong>interdependencia positiva real</strong>  entre las tareas. <strong>Roles</strong> cómo responsable de calidad, responsable de documentación, responsable de producción, obligan a que cada persona tenga una función que afecta al conjunto del proyecto.</p>
+<p>El <strong>contrato de equipo</strong> al inicio del proyecto establece: normas, canales de comunicación, forma de decidir y protocolo ante incumplimientos.</p>
+<p>Y las <strong>retrospectivas</strong> breves al final de cada hito permiten detectar problemas y acordar mejoras, antes de que sea demasiado tarde.</p>
+<div class="admonition summary">
+<p class="admonition-title">Resumen</p>
+<ul>
+<li>La evaluación formativa se organiza en checkpoints con evidencias, feedback accionable y tiempo para mejorar.</li>
+<li>Sin hitos intermedios perdemos la oportunidad de orientar el aprendizaje.</li>
+<li>La evaluación individual dentro de proyectos colectivos requiere evidencias obligatorias microdefensas y coevaluación periódica; Así evitamos el polizón social.</li>
+<li>El trabajo en equipo funciona cuando hay interdependencia positiva: roles definidos, contrato en equipo y revisiones periódicas del funcionamiento. En la defensa oral del proyecto todo esto se pone a prueba. El alumnado debe demostrar que ha aprendido no solo que ha entregado un producto.</li>
+</ul>
+</div>
+<h1 id="la-importancia-del-trabajo-en-equipo-ideas-clave-para-el-trabajo-en-equipo-en-fp">La importancia del trabajo en equipo: ideas clave para el trabajo en equipo en FP </h1>
+<ul>
+<li>Interdependencia positiva: El aprendizaje cooperativo aparece cuando los miembros del equipo se necesitan entre sí. Se favorece repartiendo el trabajo por responsabilidades y mediante revisiones cruzadas que evitan que el proyecto se convierta en un simple “puzzle” de partes aisladas.</li>
+<li>Responsabilidad individual: Aunque el resultado sea colectivo, cada estudiante debe dejar evidencias propias. Esto garantiza una evaluación justa y se logra mediante rutinas claras como minidiarios, tareas asignadas, actas, microdefensas por hitos y coevaluación.</li>
+<li>Revisión del funcionamiento: Si el equipo no se revisa, tiende a repetir errores. Breves revisiones de 5–10 minutos por hito permiten detectar problemas, acordar mejoras y avanzar de forma continua, en coherencia con metodologías activas y ágiles.</li>
+</ul>
+<h2 id="herramientas-para-el-trabajo-en-equipo-por-niveles-de-fp">Herramientas para el trabajo en equipo por niveles de FP </h2>
+<div class="admonition example">
+<p class="admonition-title">Ciclos formativos de Grado Medio</p>
+<p><strong>Tamaño del equipo</strong><br>
+Propuesta: Equipos de 3–5 estudiantes, ajustados al volumen técnico del encargo.<br>
+Finalidad Didáctica: Permite repartir responsabilidades reales sin diluir la implicación individual.</p>
+<p><strong>Formación inicial de equipos (dinámica)</strong><br>
+Propuesta: Equipos configurados por perfiles de responsabilidad.<br>
+El docente puede crear un cuestionario con ítems para cada perfil (calidad, cliente/usuario, producción, documentación). Ejemplos de items “Me fijo fácilmente en errores, requisitos y normas” “Me resulta cómodo hablar con clientes o explicar el trabajo a otros” “Prefiero ejecutar tareas técnicas y resolver problemas prácticos” “Se me da bien ordenar documentos, evidencias y procesos”.<br>
+Finalidad Didáctica:<br>
+Simula estructuras de trabajo profesionales y evita agrupaciones por afinidad personal.</p>
+<p><a href="https://sites.google.com/view/ai4education/eduteams?authuser=0&amp;pli=1">Aplicación Eduteams (IA del CSIC)</a></p>
+<p><strong>Roles de equipo</strong><br>
+Propuesta: Roles por responsabilidades profesionales (rotatorios por hito): Responsable de Calidad, Responsable de Cliente/Usuario, Responsable de Producción/Implementación, Responsable de Documentación/Evidencias.<br>
+Además de estos roles, se puede trabajar con la opción de un responsable global y un coordinador.</p>
+<p>Finalidad Didáctica:<br>
+Desarrolla competencias profesionales aplicadas y visión global del proceso productivo.<br>
+<a href="https://docs.google.com/document/d/1HNR9nZ5_7cadYCNpadqViAw21YuBckHBgD8ptyxK73E/edit?tab=t.0">Ejemplo proyecto (Escuela Profesional Xavier)</a></p>
+<p><strong>Planificación y Definición de Hecho (DoD)</strong><br>
+Propuesta: Planificación por hitos (4–6 en el curso): cada hito incluye entregable, evidencias y criterios de validación.</p>
+<p>Definición clara por hito de qué significa “terminado” y qué evidencias lo demuestran. Evidencias profesionales: entregables funcionales, checklist de calidad, registro de incidencias, evidencias gráficas y acta breve por hito.</p>
+<p>Finalidad Didáctica:<br>
+Introduce gestión de proyectos y facilita el seguimiento y la evaluación competencial. Reduce ambigüedades, mejora la calidad del trabajo y facilita la evaluación objetiva.</p>
+<p><strong>Gestión de tareas y Herramientas</strong><br>
+Propuesta: Tableros físicos (post-its) o digitales (Trello, Planner, Jira básico, Notion).</p>
+<p>Finalidad Didáctica:<br>
+Mejora la organización, la visibilidad del trabajo y la autorregulación del equipo.<br>
+<a href="https://resources.kanban.university/wp-content/uploads/2021/08/The-Official-Kanban-Guide_Spanish_A4.pdf">Guía oficial de referencia Kanban</a></p>
+<p><strong>Revisión periódica</strong><br>
+Propuesta: Revisión semanal por equipo (10–15 min): qué entregamos, qué bloquea, qué decisiones requieren validación.</p>
+<p>Finalidad Didáctica:<br>
+Fomenta comunicación profesional, toma de decisiones y resolución de problemas.</p>
+<p><strong>Intervención docente</strong><br>
+Propuesta: Tutoría técnica y validación por hitos: análisis de bloqueos, contraste con criterios y acompañamiento en la toma de decisiones.</p>
+<p>Finalidad Didáctica:<br>
+Refuerza el rol del docente como supervisor técnico y orientador profesional.</p>
+</div>
+<p>En el caso de Grado Medio, los proyectos contemplarán la decisión entre <strong>diversas alternativas</strong> por parte del equipo. Con el fin de fomentar que la decisión sea elegida de manera con la intervención de todo el equipo, algunas herramientas útiles pueden ser las siguientes:</p>
+<ul>
+<li>
+<p><a href="https://www.psicoactiva.com/blog/los-6-sombreros-de-pensar-de-edward-bono/">Dinámica de los 6 sombreros de Bono</a>: Cada participante asume un rol diferente frente a la decisión/alternativa concreta, se posiciona desde dicho rol y ayuda a reflexionar al resto del equipo.</p>
+</li>
+<li>
+<p><a href="https://proyectoempresarial.wordpress.com/wp-content/uploads/2009/10/03-maduracion-de-ideas-y-eleccion.pdf">La matriz de maduración de ideas</a>. En las que el equipo debe dar una puntuación a las diversas alternativas.</p>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Ciclos formativos de Grado Superior</p>
+<p><strong>Tamaño del equipo</strong><br>
+Propuesta: Equipos de 3–5 estudiantes, con autonomía organizativa y reparto funcional avanzado.</p>
+<p>Finalidad Didáctica:<br>
+Permite asumir responsabilidades complejas sin diluir la exigencia individual.</p>
+<p><strong>Roles del equipo</strong><br>
+Propuesta: Roles profesionales definidos (rotatorios por hito): Responsable técnico, Responsable de calidad y validación, Responsable de documentación y compliance (normativa, riesgos…), Responsable de relación con cliente/empresa.</p>
+<p>Otro recurso para construir equipos con diversidad de géneros, personalidades e inteligencias para una colaboración más eficiente es Eduteams. También está el recurso de la teoría empresarial de Belbin para la generación de equipos. Puesto que el test es de pago, una opción es que el alumno puede realizar una autoevaluación en cada uno de los ítems.</p>
+<p>Finalidad Didáctica:<br>
+Simula estructuras reales de equipos técnicos y desarrolla competencias de liderazgo y especialización<br>
+<a href="https://www.belbin.com/about/belbin-team-roles">Teoría de roles de Belbin</a></p>
+<p><strong>Planificación del Proyecto</strong><br>
+Propuesta: Planificación por hitos estratégicos, con entregables funcionales, evidencias asociadas y criterios de validación técnica.</p>
+<p>Finalidad Didáctica:<br>
+Refuerza la gestión avanzada de proyectos y el control del proceso completo.</p>
+<p><strong>Gestión de decisiones y riesgos</strong><br>
+Propuesta: Registro de decisiones (Decision log): una página por decisión relevante (alternativas consideradas, criterios, evidencias, decisión adoptada).</p>
+<p>Finalidad Didáctica:<br>
+Introduce pensamiento estratégico, prevención de errores y mejora de la calidad del proyecto.</p>
+<p><strong>Seguimiento y micro-defensas</strong><br>
+Propuesta: Dinámica ágil combinada: stand-up breve (5 min), revisión por hito y retrospectiva técnica (10 min).</p>
+<p>Presentaciones técnicas breves al finalizar cada hito, con evidencias y justificación de decisiones.</p>
+<p>Finalidad Didáctica:<br>
+Favorece la comunicación profesional, la mejora continua y la autorregulación del equipo. Entrena la defensa final y hace visible el proceso de aprendizaje y el razonamiento técnico.</p>
+<p><strong>Carpeta de evidencias</strong><br>
+Propuesta: Carpeta estructurada con entregables, registros, decisiones, evidencias técnicas y reflexiones justificadas.</p>
+<p>Finalidad Didáctica:<br>
+Permite evaluar procesos, criterios y calidad técnica, no solo el producto final.</p>
+<p><strong>Intervención docente</strong><br>
+Propuesta: Rol de supervisión experta: validación de decisiones clave, contraste con criterios técnicos, normativos y de sostenibilidad.</p>
+<p>Finalidad Didáctica:<br>
+Sitúa al docente como referente profesional y evaluador del razonamiento técnico del equipo.</p>
+</div>
+<p>Con referencia al Grado Superior, el reto es que el equipo tome decisiones técnicas y las justifique con criterios (coste, tiempo, calidad, normativa, sostenibilidad, experiencia de usuario).  Se trata de proyectos de alta complejidad técnica, orientados a innovación, mejora de procesos, investigación aplicada o emprendimiento, con simulación de encargo real o reto profesional que favorezcan la integración profunda de conocimientos y la toma de decisiones propias de un perfil técnico superior.</p>
+<p>En el caso de análisis de problemas en equipo y toma de decisiones en Grado Superior puede ser muy útil recurrir a la herramienta empresarial <a href="https://www.piranirisk.com/es/blog/diagrama-de-ishikawa-clave-en-gestion-de-riesgos/">Diagrama de Ishikawa</a>, que permite analizar las causas de los problemas para así determinar soluciones más enfocadas.</p>
+<h2 id="recursos-y-dinámicas-para-el-trabajo-en-equipo">Recursos y dinámicas para el trabajo en equipo </h2>
+<h3 id="contrato-de-equipo-team-charter-20-min">Contrato de equipo (Team Charter) 20 min </h3>
+<p>Documento de 1 cara que recoge: objetivo del proyecto en una frase, roles y rotación, normas de comunicación (canal, horario y tiempos de respuesta), norma de toma de decisiones (consenso, mayoría o “disagree and commit”), protocolo ante incumplimientos (aviso, plan de mejora, mediación, reajuste de tareas y evidencias) y calendario de reuniones. Se revisa a mitad del proyecto.</p>
+<p>Establece normas y expectativas desde el inicio y previene conflictos. Evidencia: contrato firmado y revisión intermedia.</p>
+<p><a href="https://docs.google.com/document/d/1xk7JFBw9LyAGBubUVtOFRAEzP1iaZBLwNwfZPUXqXZc/edit?tab=t.0">Dinámica de contrato de grupo</a></p>
+<h3 id="rueda-de-roles">Rueda de roles </h3>
+<p>Momento: Inicio de cada hito<br>
+Duración: 5 min</p>
+<p>Cada rol expone qué necesita del equipo para el hito (por ejemplo, calidad solicita criterios claros; documentación pide fotos; cliente necesita validación de requisitos).</p>
+<p>Ejemplo: Responsable de calidad: “Necesito que acordemos los criterios antes de empezar y que me aviséis cuando terminéis una tarea para revisarla”.</p>
+<p>Activa la interdependencia positiva y reduce malentendidos. Evidencia: acuerdos del hito recogidos en acta.</p>
+<p><strong>Recurso</strong><br>
+Acta breve del hito con necesidades y acuerdos recogidos.<br>
+El docente cronometra la ronda (30–45 segundos por rol), anota necesidades recurrentes y valida que queden recogidas en el acta del hito.</p>
+<h3 id="stand-up-adaptado-a-fp">Stand-up adaptado a FP </h3>
+<p>Momento: Sesiones de trabajo<br>
+Duración: 5-8 min</p>
+<p>Cada miembro responde a tres preguntas: qué hice desde la última sesión, qué haré hoy y qué me bloquea. El profesorado registra bloqueos recurrentes.</p>
+<p>Mejora la coordinación del equipo y la tutorización colectiva, evitando repeticiones innecesarias. Evidencia: registro de bloqueos.</p>
+<p><strong>Recurso</strong><br>
+Ejemplo específico de FP que incluye “Scrum diario” (reunión breve de coordinación) y recomienda tableros tipo Kanban.</p>
+<p><a href="https://intef.es/experiencias_edu/scrum/">Proyecto Scrum (INTEF)</a></p>
+<h3 id="retrospectiva-3-2-1">Retrospectiva 3-2-1 </h3>
+<p>Momento: Cierre de cada hito<br>
+Duración: 10 min</p>
+<p>El equipo identifica 3 cosas que han funcionado, 2 que deben mejorar y 1 acuerdo concreto para el siguiente hito. Se fotografía y se archiva.</p>
+<p>Fomenta la mejora continua y la reflexión sobre el proceso. Evidencia: foto o acta de retrospectiva.</p>
+<p><strong>Recurso</strong><br>
+Foto del panel, acta breve o documento compartido con el acuerdo del siguiente hito</p>
+<h3 id="técnica-1-2-4-todos-para-decidir">Técnica “1-2-4-Todos” para decidir </h3>
+<p>Momento: Cuando se requiere una decisión<br>
+Duración: 10 min<br>
+1 minuto de reflexión individual, 2 minutos de contraste en pareja, 4 minutos de consenso en minigrupo y decisión final del equipo.</p>
+<p>Garantiza participación real y evita que decidan siempre las mismas personas, especialmente útil en CFGB y CFGM. Evidencia: decisión consensuada.</p>
+<p><strong>Recurso</strong><br>
+<a href="https://cubus.oitcinterfor.org/1-2-4-todos_esp/">1-2-4-todos</a></p>
+<h3 id="protocolo-de-conflicto-en-4-pasos">Protocolo de conflicto en 4 pasos </h3>
+<p>Momento: Cuando surge un conflicto<br>
+Duración: 5-10 min<br>
+Paso 1: describir el hecho sin juicio; paso 2: explicar el impacto; paso 3: proponer una alternativa concreta; paso 4: acordar evidencia de cambio (qué se hará y cuándo). Puede entrenarse con un role-play breve.</p>
+<p>Permite abordar conflictos de forma constructiva y orientada a la mejora. Evidencia: acuerdo documentado.<br>
+Recursos<br>
+<a href="https://www.dykinson.com/autores/penalver-alonso-pablo/57804/">Autoconocimiento y gestión de las emociones en educación</a><br>
+<a href="https://muevelanoviolencia.net/assets/units/printable/muevelanoviolencia-U04-impr.pdf">Cómo arruinar mi lucha pacífica (mueve la no violencia)</a></p>
+<h2 id="herramientas-de-coordinación-para-el-alumnado">Herramientas de coordinación para el alumnado </h2>
+<p>En el trabajo por proyectos, el problema más habitual no es la falta de herramientas, sino el uso simultáneo de demasiadas herramientas sin una rutina clara. Para evitarlo, se recomienda adoptar un sistema mínimo viable, sencillo y estable, que permita coordinar el trabajo del alumnado y generar evidencias sin sobrecargar ni al equipo ni al profesorado.</p>
+<p>Un sistema básico eficaz puede sostenerse con estos elementos:</p>
+<ul>
+<li>Tablero</li>
+<li>Carpeta de evidencias: Con una estructura fija y conocida por todos desde el inicio. Esta carpeta en la nube debe diferenciar el trabajo individual del colectivo.</li>
+<li>Rúbrica de evaluación: Con criterios claros tanto para el producto final como para el proceso de trabajo, incorporando indicadores de funcionamiento del equipo y de aportación individual.</li>
+<li>Definición de hecho: Para cada hito del proyecto conviene definir, de forma explícita, qué significa que esté terminado. Esta “definición de hecho” consiste en una lista breve del tipo: “Para que el hito esté finalizado, debe existir…”</li>
+<li>Actas exprés por sesión (30-60 seg):  Una plantilla suficiente incluye: fecha y asistentes, tres tareas realizadas, tres tareas previstas para la siguiente sesión, bloqueos detectados, evidencia guardada (foto o enlace). Este recurso facilita la tutorización docente, reduce malentendidos del tipo “me dijeron que…” y deja constancia objetiva del avance del equipo.</li>
+<li>Coevaluación breve y periódica: La coevaluación resulta especialmente eficaz cuando es breve, frecuente y orientada a la mejora, no al castigo. Un formato sencillo puede incluir: Cuatro criterios valorados del 1 al 5: contribución, comunicación, fiabilidad y apoyo al equipo. Dos frases abiertas: “Lo mejor de tu aporte…” y “Una mejora sería…”. Revisión docente solo en casos de discrepancias extremas.</li>
+</ul>
+<h2 id="coordinación-entre-docentes">Coordinación entre docentes </h2>
+<p>Una propuesta de mínimos con enfoque práctico podría ser:</p>
+<ul>
+<li>Mapa común de hitos: Definir de forma conjunta los hitos del proyecto y los entregables asociados a cada uno, con un calendario visible para todo el alumnado. El uso de Calendar facilitará siempre la tarea. También el uso de herramientas que hemos propuesto para el alumnado, como es el caso de Trello. Cada hito debe generar evidencias útiles para varios módulos, evitando pedir trabajos duplicados.</li>
+<li>Repositorio único de evidencias</li>
+<li>Rúbrica común del proceso: Establecer una rúbrica compartida (5–6 criterios) para evaluar el funcionamiento del equipo. Cada módulo puede añadir, si es necesario, rúbricas específicas para el producto, pero manteniendo un núcleo común. Pocos instrumentos, pero comunes: es preferible una rúbrica compartida y estable a múltiples instrumentos distintos por módulo.</li>
+<li>Reuniones docentes breves y periódicas: Programar reuniones de coordinación de 30 minutos cada 2–3 semanas, centradas en tres cuestiones: evidencias revisadas, bloqueos detectados y ajustes necesarios. La herramienta Google Space facilita la creación de chats grupales de manera que no es necesario usar WhatsApp.</li>
+<li>Reparto claro de responsabilidades: Acordar quién lidera el proyecto, quién valida decisiones y quién apoya, evitando duplicidades o vacíos de responsabilidad.</li>
+</ul>
+<h2 id="plantillas-útiles-y-resolución-de-problemas">Plantillas útiles y resolución de problemas </h2>
+<ul>
+<li>
+<p><strong>Contrato de equipo (Exprés)</strong><br>
+Elementos clave que debe contener:<br>
+Objetivo del proyecto · Roles del día · Canal de comunicación · Tiempo de respuesta · Forma de decidir · Norma de asistencia/puntualidad · Qué hacer si alguien no cumple · Fecha de revisión.<br>
+Finalidad:<br>
+Alinear al equipo desde el inicio y prevenir conflictos.</p>
+</li>
+<li>
+<p><strong>Acta exprés por sesión</strong><br>
+Elementos clave que debe contener:<br>
+Fecha · Asistentes · Tareas hechas (máx. 3) · Próximas tareas (máx. 3) · Bloqueo detectado · Evidencia guardada (foto/enlace).<br>
+Finalidad:<br>
+Dar seguimiento al trabajo, crear trazabilidad y facilitar la tutoría.</p>
+</li>
+<li>
+<p><strong>Rúbrica de funcionamiento del equipo</strong><br>
+Elementos clave que debe contener:<br>
+Cumple acuerdos y plazos · Comunica avances y bloqueos · Aporta trabajo verificable · Ayuda al avance del equipo (escala 1–4).<br>
+Finalidad:<br>
+Evaluar el proceso del equipo de forma clara y justa.</p>
+</li>
+</ul>
+<p><strong>Problemas comunes en los equipos y soluciones rápidas</strong></p>
+<ul>
+<li>
+<p>Una persona lo hace todo<br>
+Señal de alerta: El entregable sale adelante, pero la participación es desigual y el equipo depende de una sola persona.<br>
+Solución práctica: Cambiar el reparto por responsabilidades, no por partes. Introducir revisión cruzada obligatoria (nadie entrega sin validación). Establecer microdefensas por hito (60–90 segundos por estudiante). Aplicar coevaluación breve y, si se repite, ajustar tareas y exigir evidencia individual mínima.</p>
+</li>
+<li>
+<p>El equipo se bloquea y espera al profesor<br>
+Señal de alerta:     Muchas preguntas sin intentar alternativas; parálisis ante los problemas.<br>
+Solución práctica: Implantar la rutina “prueba dos opciones y luego pregunta”. Usar el tablero con columna “Bloqueado”, describiendo el problema (qué sabemos, qué no, qué probamos). Crear un banco de recursos con 2–3 enlaces, ejemplos o plantillas para bloqueos habituales.</p>
+</li>
+<li>
+<p>Conflictos personales o mala comunicación<br>
+Señal de alerta: Acusaciones, silencios prolongados, tareas duplicadas o descoordinadas.<br>
+Solución práctica: Volver al contrato de equipo y aplicar el protocolo de conflicto en 4 pasos. Reasignar roles de forma temporal (por ejemplo, portavoz o secretario). Convertir el conflicto en una tarea: redactar un acuerdo y guardarlo como evidencia.</p>
+</li>
+<li>
+<p>Polizón social<br>
+Señal de alerta: Una persona no aporta al trabajo, pero firma actas o aparece en el producto final.<br>
+Solución práctica: Exigir evidencia individual obligatoria por hito y asignar tareas pequeñas y claras. Aplicar coevaluación con criterios observables (no opiniones). Si persiste, establecer un plan de mejora individual con objetivos semanales breves y registro.</p>
+</li>
+</ul>
+<h1 id="evaluación-formativa-y-sumativa">Evaluación formativa y sumativa </h1>
+<h2 id="evaluación-formativa-y-sumativa-1">Evaluación formativa y sumativa </h2>
+<h1 id="referencias">Referencias </h1>
+<p>El Aprendizaje Cooperativo, un camino hacia la inclusión educativa (León et al., 2016)<br>
+<a href="https://dialnet.unirioja.es/servlet/articulo?codigo=5709246">https://dialnet.unirioja.es/servlet/articulo?codigo=5709246</a></p>
+<p>El Aprendizaje Cooperativo, una metodología activa para la educación del siglo XXI: una revisión bibliográfica<br>
+(Pérez &amp; Poveda, 2019)<br>
+<a href="https://revistaprismasocial.es/ps/article/view/2693">https://revistaprismasocial.es/ps/article/view/2693</a></p>
+<p>An Experimental Study on the Impact of Collaborative and Active Learning on Vocational Students' Learning Achievement and Self-Motivation<br>
+(Ruijuan et al., 2024)<br>
+<a href="https://dialnet.unirioja.es/descarga/articulo/10454626.pdf">https://dialnet.unirioja.es/descarga/articulo/10454626.pdf</a></p>
+<p>Collaborative Learning in Technical and Vocational Education and Training: A Mixed-Methods Quasi-Experimental Study<br>
+(Simesso et al., 2024)<br>
+<a href="https://publisher.uthm.edu.my/ojs/index.php/JTET/article/download/22094/7750/113222">https://publisher.uthm.edu.my/ojs/index.php/JTET/article/download/22094/7750/113222</a></p>
+<p><a href="https://www.orientacionandujar.es/wp-content/uploads/2018/01/t%C3%A9cnica-did%C3%A1ctica-Philips-66-centrada-en-el-grupo.pdf">Técnicas Phillips 66.</a></p>
+<p><a href="https://psicologiaymente.com/desarrollo/dinamicas-grupo-adolescentes-jovenes">Dinámicas de presentación a principio de proyecto, de cooperación y de resolución de conflictos.</a></p>
+<p><a href="https://psicologiaymente.com/desarrollo/dinamicas-grupo-adolescentes-jovenes">Dinámicas más utilizadas en el ámbito profesional (muy útiles en Grado Superior).</a></p>
+<p>Un recurso a destacar es el proyecto <a href="https://fpnaranja.com/quien-somos/">FP Naranja</a>, orientado a reforzar el trabajo en equipo desde una perspectiva humana y profesional, incorporando la gestión de las emociones como competencia clave para la empleabilidad. A través de recursos prácticos, muestra cómo la comunicación, la empatía y la autorregulación influyen en el funcionamiento de los equipos y la resolución de conflictos, en línea con las demandas de la nueva FP y del entorno laboral actual.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
