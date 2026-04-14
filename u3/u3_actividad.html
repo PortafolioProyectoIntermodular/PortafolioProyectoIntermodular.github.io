@@ -228,17 +228,24 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#introducción" class="md-toc-link">
             <p>Introducción</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#desarrollo-del-gem" class="md-toc-link">
+            <p>Desarrollo del Gem</p>
+
           </a></div>
 </div>
 <div style="page-break-after:always;"></div>
 <h1 id="introducción">Introducción </h1>
-<p>Creamos un tutor Gem de Gemini para el proyecto intermodular, con el objetivo de proporcionar al alumnado un recurso de apoyo personalizado que pueda resolver dudas, ofrecer orientación y facilitar el aprendizaje autónomo durante el desarrollo del proyecto. Este tutor virtual estará diseñado para complementar la labor docente, ofreciendo respuestas rápidas y contextualizadas a las preguntas del alumnado, y ayudando a mantener el ritmo de trabajo en los proyectos intermodulares.</p>
-<p>Identifica una necesidad concreta de tutorización: ¿dónde se atasca habitualmente tu alumnado? ¿Qué preguntas repiten una y otra vez? ¿Qué conceptos les cuesta más? ¿En qué fase del proyecto necesitan más orientación? El Gem que crees debe responder, al menos, a una de estas necesidades.</p>
+<blockquote>
+<p>Creamos un tutor Gem de Gemini para el proyecto intermodular, con el objetivo de proporcionar al alumnado un recurso de apoyo personalizado que pueda resolver dudas, ofrecer orientación y facilitar el aprendizaje autónomo durante el desarrollo del proyecto. Este tutor virtual estará diseñado para complementar la labor docente, ofreciendo respuestas rápidas y contextualizadas a las preguntas del alumnado, y ayudando a mantener el ritmo de trabajo en los proyectos intermodulares.<br>
+Identifica una necesidad concreta de tutorización: ¿dónde se atasca habitualmente tu alumnado? ¿Qué preguntas repiten una y otra vez? ¿Qué conceptos les cuesta más? ¿En qué fase del proyecto necesitan más orientación? El Gem que crees debe responder, al menos, a una de estas necesidades.</p>
 <ul>
 <li>Rol y tono: «Eres un tutor de [materia] para alumnado de [ciclo]. Usa un tono cercano pero profesional.»</li>
 <li>Método pedagógico: «Nunca des la respuesta directa. Cuando el alumno pregunte algo, hazle una o dos preguntas que le guíen hacia la respuesta. Solo da la respuesta si tras dos intentos no la encuentra a pesar de haberse aproximado.»</li>
 <li>Límites claros: «Solo respondes sobre temas relacionados con [módulos implicados]. Si te preguntan sobre otros temas, indica amablemente que no es tu área y sugiere consultar al profesorado.»</li>
 </ul>
+</blockquote>
+<h1 id="desarrollo-del-gem">Desarrollo del Gem </h1>
 <table>
 <thead>
 <tr>
@@ -249,99 +256,53 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <tbody>
 <tr>
 <td>Nombre del Gem</td>
-<td>Nombre descriptivo que elegiste para el Gem.</td>
+<td>Ayudante de personalización de aplicaciones web mediante ayuda básica en HTML y CSS</td>
 </tr>
 <tr>
 <td>Ciclo formativo y módulos implicados</td>
-<td>Indica el ciclo (GB/GM/GS), título y los módulos que cubre el tutor.</td>
+<td>GM: Sistemas Microinformáticos y Redes (SMR) - Módulo de Aplicaciones Web</td>
 </tr>
 <tr>
 <td>Necesidad de tutorización que cubre</td>
-<td>¿Dónde se atasca tu alumnado? ¿Qué preguntas repiten? ¿Qué conceptos les cuestan?</td>
+<td>El alumnado suele atascarse en la fase de personalización de la aplicación web, especialmente en la aplicación de estilos CSS y en la estructuración del contenido con HTML. Preguntas frecuentes incluyen cómo aplicar estilos específicos, cómo organizar el contenido de manera efectiva y cómo solucionar problemas comunes relacionados con el diseño.</td>
 </tr>
 <tr>
 <td>Instrucciones del Gem (rol, tono y método pedagógico)</td>
-<td>Copia aquí las instrucciones que has escrito para el Gem: qué rol asume, qué tono usa y cómo guía al alumnado.</td>
+<td>Eres del equipo de profesorado de Aplicaciones Web para alumnado del CFGM Sistemas Microinformáticos y Redes. Usa un tono cercano pero profesional. Nunca des la respuesta directa. Cuando el alumnado pregunte algo, hazle una o dos preguntas que le guíen hacia la respuesta. Solo da la respuesta si tras tres intentos no la encuentra a pesar de haberse aproximado, y siempre con la explicación detallada de cada uno de los pasos hasta obtenerla. No resolver tareas completas; ayudar a que el alumnado las desarrolle por sí mismo proporcionando pistas y recursos. Recomendar consultar con el profesorado cuando la duda exceda tu ámbito o requiera evaluación.</td>
 </tr>
 <tr>
 <td>Límites temáticos y criterio de derivación</td>
-<td>¿Sobre qué temas responde y sobre cuáles no? ¿Cuándo deriva al docente?</td>
+<td>Respondes sobre temas relacionados con la personalización de aplicaciones web utilizando HTML y CSS. No respondes sobre otros temas como JavaScript, lenguajes de programación tanto de entorno cliente como de entorno servidor, bootstrap, bases de datos o redes. Si el alumnado pregunta sobre temas fuera de tu ámbito, indicas amablemente que no es tu área y sugieres consultar al profesorado para obtener ayuda adicional.</td>
 </tr>
 <tr>
 <td>Documentos de referencia subidos</td>
-<td>Lista los documentos que has adjuntado al Gem.</td>
+<td>1. Apuntes de clase de HMTL y CSS básicos. 2. Cheat sheet de HTML y de CSS. 3. Enlaces a recursos online como <a href="https://www.w3schools.com">w3cschool</a>.</td>
 </tr>
 <tr>
-<td>Pruebas realizadas y ajustes</td>
-<td>Describe al menos 3 preguntas, respuestas y ajustes realizados.</td>
+<td>Prueba 1 realizada y ajustes</td>
+<td>1. Pregunta: "¿Cómo puedo centrar un elemento en la página?" Respuesta inicial: No daba respuesta rápida. Ajuste: Añadí un PDF con un libro de HTML y CSS. La respuesta nueva se muestra en la imagen 1.</td>
+</tr>
+<tr>
+<td>Prueba 2 realizada y ajustes</td>
+<td>2. Pregunta: "¿Cómo puedo cambiar el color de fondo de mi página?" Respuesta inicial en imagen 2. Ajuste: No realicé ningún ajuste.</td>
+</tr>
+<tr>
+<td>Prueba 3 realizada y ajustes</td>
+<td>3. Pregunta: "¿Cómo puedo hacer que mi texto sea más grande?" Respuesta inicial: En imagen 3. Ajuste: Incluí que siempre diera una opción de respuesta sencilla, y una responsive</td>
 </tr>
 <tr>
 <td>URL del Gem compartido</td>
-<td>Pega aquí el enlace compartido de tu Gem.</td>
+<td><a href="https://gemini.google.com/gem/1lm_34Ln-eEaAP7RFEYYhJQFtcdKM4wb8?usp=sharing">Enlace al Gem</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Autoevaluación del Gem</strong></p>
-<table>
-<thead>
-<tr>
-<th>Criterio</th>
-<th>Sí</th>
-<th>A medias</th>
-<th>No</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>El Gem está claramente vinculado a un proyecto intermodular.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Se identifica bien la necesidad de ayuda del alumnado dentro del proyecto.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Se indican con claridad el ciclo formativo y los módulos implicados.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>El nombre del Gem es claro y coherente con el proyecto.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Las instrucciones del Gem son adecuadas para orientar al alumnado.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>El Gem guía con preguntas en lugar de dar respuestas directas.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Incluye documentos de referencia relevantes para el proyecto.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>La URL compartida funciona y permite acceder al Gem.</td>
-<td>☐</td>
-<td>☐</td>
-<td>☐</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Imagen Respuesta a Pregunta 1</strong><br>
+<img src="image.png" alt="alt text"></p>
+<p><img src="image-1.png" alt="alt text"></p>
+<p><strong>Imagen Respuesta a Pregunta 2</strong><br>
+<img src="image-2.png" alt="alt text"></p>
+<p><strong>Imagen Respuesta a Pregunta 3</strong><br>
+<img src="image-3.png" alt="alt text"></p>
 
       </div>
       
